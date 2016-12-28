@@ -6,10 +6,12 @@
 CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
 ```
 
+* 存储emoj表情，使用UTF8mb4
+
 2、**表名称小写、单数、下划线，指定使用utf8字符**
 
     CREATE TABLE `post_comment` (
-      `id` int(11) NOT NULL AUTO_INCREMENT,
+      `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
       `post_id` int(11) NOT NULL COMMENT '文章ID',
       `author` varchar(255) NOT NULL COMMENT '作者',
       `title` varchar(255) NOT NULL COMMENT '标题',
@@ -20,12 +22,20 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
       PRIMARY KEY (`id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章评论'
 
+* 字段段名称小写、单数、下划线
 * 字段尽量使用 tinyint， 而非 int
 * 字段用中文注释、包括表名称注释
 * 每个表带一个自增主键ID，其它业务可设置非自增或者bigint等
 * 全部NOT NULL ，而非允许NULL
 * Engine除非特殊要求，全部为 InnoDB，而非MyISAM
-* 时间类尽量使用int类型，业务要求可设置为datetime等
+* 时间类尽量使用int类型，业务要求可设置为datetime或者TIMESTAMP等
+* 使用TINYINT来代替ENUM类型，将字符转化为数字
+* 禁止使用外键约束，在程序上面控制
+* 临时库、临时表名必须以tmp为前缀，并以日期为后缀
+
+3、其它说明
+* 存储过程尽量不用
+* sql语句避免使用临时表
 
 
 
