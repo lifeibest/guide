@@ -42,7 +42,7 @@ SELECT post_id from  post_comment
 2、SELECT * from post where id IN(post_ids)
 ```
 
-4、拒绝join联表
+**4、拒绝join联表**
 
 如何联表查询?
 
@@ -55,9 +55,9 @@ SELECT * FROM post left JOIN post_comment on post.id=post_comment.post_id
 2、SELECT * FROM post_comment WHERE id IN (ids)，如果ids结果集过大，可分段再查询
 ```
 
-5、order by 常见错误使用讲解
+**5、order by 常见错误使用讲解**
 
-查询最近10篇文章，这是最容易写错的sql
+查询最近10篇文章，这是最容易写错的sql ，也是查询范围过大
 
 ```
 错误：
@@ -66,6 +66,17 @@ SELECT * from post ORDER BY id desc limit 10;
 正确：需限制id的取值范围，减少查询范围
 SELECT * from post WHERE id>1000 ORDER BY id desc limit 10;
 ```
+
+**6、禁止在sql语句中使用函数,可以程序先用函数计算好。**
+
+**7、杜绝危险SQL**
+
+```
+错误
+where 1=1 这样无意义或恒真的条件，，如果遇到update/delete或遭到sql注入就恐怖了
+```
+
+
 
 
 

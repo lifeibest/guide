@@ -33,6 +33,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 * 使用TINYINT来代替ENUM类型，将字符转化为数字
 * 图片、文件等内容不允许直接存储在数据库，只存文件地址
 * 用户密码等需加密后存储
+* 同一字段在不同表设计的字段类型要一样
 
 **3、其它说明**
 
