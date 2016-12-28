@@ -34,7 +34,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 * 图片、文件等内容不允许直接存储在数据库，只存文件地址
 * 用户密码等需加密后存储
 
-3、其它说明
+**3、其它说明**
 
 * 存储过程尽量不用
 * 触发器尽量不用
@@ -42,7 +42,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 * 禁止使用外键约束，在程序上面控制临时库、
 * 临时表名必须以tmp为前缀，并以日期为后缀
 
-4、表数据一致性说明
+**4、表数据一致性说明**
 
 * 为了性能考虑，表中设计多余字段，同一个字段值在多张表存储，以空间换时间，这点和mysql本身的设计初衷有出入
 
