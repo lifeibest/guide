@@ -40,7 +40,6 @@ SELECT post_id from  post_comment
 正确：分两步查询
 1、SELECT post_id from  post_comment，程序查询结果后，将post_id存一个变量中。
 2、SELECT * from post where id IN(post_ids)
-
 ```
 
 4、拒绝join联表
@@ -54,6 +53,18 @@ SELECT * FROM post left JOIN post_comment on post.id=post_comment.post_id
 正确：
 1、SELECT  * FROM post  结果集，取取对应关联ids
 2、SELECT * FROM post_comment WHERE id IN (ids)，如果ids结果集过大，可分段再查询
+```
+
+5、order by 常见错误使用讲解
+
+查询最近10篇文章，这是最容易写错的sql
+
+```
+错误：
+SELECT * from post ORDER BY id desc limit 10;
+
+正确：需限制id的取值范围，减少查询范围
+SELECT * from post WHERE id>1000 ORDER BY id desc limit 10;
 ```
 
 
