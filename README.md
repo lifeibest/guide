@@ -1,2 +1,6 @@
-# guide
-Some thing about Mysql,PHP,Golang 's standard
+# Guide 设计规范
+
+Some thing about Mysql,PHP,Golang 's standard。
+
+
+
