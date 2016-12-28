@@ -27,7 +27,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 * 字段尽量使用 tinyint， 而非 int，并且要有默认值
 * 字段用中文注释、包括表名称注释
 * 每个表带一个自增主键ID，其它业务可设置非自增或者bigint等
-* 全部NOT NULL ，而非允许NULL
+* 全部字段NOT NULL ，而非允许NULL,索引字段字段如果NULL,影响优化器对索引的选择,不能保证有值
 * Engine除非特殊要求，全部为 InnoDB，而非MyISAM
 * 时间类尽量使用int类型，业务要求可设置为datetime或者TIMESTAMP等
 * 使用TINYINT来代替ENUM类型，将字符转化为数字
