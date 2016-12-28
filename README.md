@@ -1,2 +1,2 @@
 # guide
-Some thing about mysql,PHP,Golang 's standard
+Some thing about Mysql,PHP,Golang 's standard
