@@ -40,7 +40,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 * 存储过程尽量不用
 * 触发器尽量不用
 * sql语句避免使用临时表
-* 禁止使用外键约束，在程序上面控制临时库、
+* 禁止使用外键约束，在程序上面控制约束
 * 临时表名必须以tmp为前缀，并以日期为后缀
 
 **4、表数据一致性说明**
