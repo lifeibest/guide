@@ -12,30 +12,37 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 
     CREATE TABLE `post_comment` (
       `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
-      `post_id` int(11) NOT NULL COMMENT '文章ID',
+      `post_id` int(11) unsigned NOT NULL COMMENT '文章ID',
       `author` varchar(255) NOT NULL COMMENT '作者',
       `title` varchar(255) NOT NULL COMMENT '标题',
       `content` text NOT NULL COMMENT '评论',
       `status` tinyint(11) NOT NULL DEFAULT '1' COMMENT '1审核、 2审核通过、 3审核失败',
       `create_at` datetime NOT NULL COMMENT '创建时间',
       `update_at` datetime NOT NULL COMMENT '更新时间',
-      PRIMARY KEY (`id`)
+      PRIMARY KEY (`id`),
+      KEY `post_id` (`post_id`)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章评论'
 
 * 字段段名称小写、单数、下划线
-* 字段尽量使用 tinyint， 而非 int
+* 字段尽量使用 tinyint， 而非 int，并且要有默认值
 * 字段用中文注释、包括表名称注释
 * 每个表带一个自增主键ID，其它业务可设置非自增或者bigint等
 * 全部NOT NULL ，而非允许NULL
 * Engine除非特殊要求，全部为 InnoDB，而非MyISAM
 * 时间类尽量使用int类型，业务要求可设置为datetime或者TIMESTAMP等
 * 使用TINYINT来代替ENUM类型，将字符转化为数字
-* 禁止使用外键约束，在程序上面控制
-* 临时库、临时表名必须以tmp为前缀，并以日期为后缀
+* 图片、文件等内容不允许直接存储在数据库，只存文件地址
+* 用户密码等需加密后存储
 
 3、其它说明
+
 * 存储过程尽量不用
 * sql语句避免使用临时表
+* 禁止使用外键约束，在程序上面控制临时库、
+* 临时表名必须以tmp为前缀，并以日期为后缀
+
+4、表数据一致性说明
+* 为了性能考虑，表中设计多余字段，同一个字段值在多张表存储，以空间换时间，这点和mysql本身的设计初衷有出入。
 
 
 
