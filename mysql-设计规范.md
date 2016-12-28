@@ -47,5 +47,8 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 
 * 为了性能考虑，表中设计多余字段，同一个字段值在多张表存储，以空间换时间，这点和mysql本身的设计初衷有出入
 
+**5、索引**
+* 索引是双刃剑，会增加维护负担，增大IO压力，索引占用空间是成倍增加的,单张表的索引数量控制在5个以内，或不超过表字段个数的20%
+
 
 
