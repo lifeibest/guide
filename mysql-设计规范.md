@@ -29,7 +29,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 * 每个表带一个自增主键ID，其它业务可设置非自增或者bigint等
 * 全部字段NOT NULL ，而非允许NULL,索引字段字段如果NULL,影响优化器对索引的选择,不能保证有值
 * Engine除非特殊要求，全部为 InnoDB，而非MyISAM
-* 时间类尽量使用int类型，业务要求可设置为datetime或者TIMESTAMP等
+* 时间类尽量使用int类型，业务要求可设置为datetime或者TIMESTAMP等，时间类查询比较多，用int速度与快
 * 使用TINYINT来代替ENUM类型，将字符转化为数字
 * 图片、文件等内容不允许直接存储在数据库，只存文件地址
 * 用户密码等需加密后存储
@@ -48,6 +48,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
 * 为了性能考虑，表中设计多余字段，同一个字段值在多张表存储，以空间换时间，这点和mysql本身的设计初衷有出入
 
 **5、索引**
+
 * 索引是双刃剑，会增加维护负担，增大IO压力，索引占用空间是成倍增加的,单张表的索引数量控制在5个以内，或不超过表字段个数的20%
 
 
