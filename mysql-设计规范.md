@@ -3,7 +3,7 @@
 1、**数据库名字小写、单数、下划线，指定使用utf8字符**
 
 ```
-CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_ci;
+CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;
 ```
 
 * 存储emoj表情，使用UTF8mb4
@@ -21,7 +21,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_general_
       `update_at` datetime NOT NULL COMMENT '更新时间',
       PRIMARY KEY (`id`),
       KEY `post_id` (`post_id`)
-    ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COMMENT='文章评论'
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COMMENT='文章评论'
 
 * 字段段名称小写、单数、下划线
 * 字段尽量使用 tinyint， 而非 int，并且要有默认值
