@@ -1,6 +1,6 @@
 # Mysql 设计规范
 
-1、**数据库名字小写、单数、下划线，指定使用utf8字符**
+1、**数据库名字小写、单数、下划线，指定使用utf8mb4字符**
 
 ```
 CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;
