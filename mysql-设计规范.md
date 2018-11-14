@@ -30,12 +30,19 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci COMMENT='文章评论'
 
 * Engine除非特殊要求，全部为 InnoDB，而非MyISAM
+
 * 字符：CHARSET=utf8mb4 COLLATE=utf8mb4\_unicode\_ci
+
 * 表名称：小写、单数、下划线
+
 * 字段用中文注释、包括表名称注释
+
 * 字段段名称小写、单数、下划线；禁止出现数字开头，禁止两个下划线中间只 出现数字
+
 * 禁用保留字，如 order、desc、range、match、delayed 等
+
 * 字段尽量使用 tinyint， 而非 int，并且要有默认值,如果没有负数，必须为unsigned
+
 * 每个表带一个自增主键ID，其它业务可设置非自增或者bigint等
 
 * 全部字段NOT NULL ，而非允许NULL,索引字段字段如果NULL,影响优化器对索引的选择,不能保证有值
