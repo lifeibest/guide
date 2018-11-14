@@ -51,7 +51,9 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 * 枚举使用 tinyint或者int 代替，从数字1开始
 
 * 每个表自带3个字段，id、created\_at、updated\_at
+
 * 说明:其中 id 必为主键，类型为 unsigned bigint、单表时自增、步长为 1;created\_at、updated\_at为时间类datetime
+
 * 类型用户名有唯一索引要求的，必须添加唯一索引
 
 **3、其它说明**
