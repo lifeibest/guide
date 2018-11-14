@@ -37,6 +37,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 * 每个表带一个自增主键ID，其它业务可设置非自增或者bigint等
 
 * 全部字段NOT NULL ，而非允许NULL,索引字段字段如果NULL,影响优化器对索引的选择,不能保证有值
+
 * is\_ 是否类字段，1代表真，0代表假，增加默认值
 * 时间类为datetime
 * 资金和钱相关的为bigint\(20\)，精确到分
@@ -44,16 +45,16 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 * 枚举使用 tinyint或者int 代替，从数字1开始
 * 每个表自带3个字段，id、created\_at、updated\_at
 * 说明:其中 id 必为主键，类型为 unsigned bigint、单表时自增、步长为 1;created\_at、updated\_at为时间类datetime
-* 
-**3、其它说明**
+* **3、其它说明**
 
-* 图片、文件等内容不允许直接存储在数据库，
+* 图片、文件等内容不允许直接存储在数据库，只存文件地址
 
-* 只存文件地址用户密码等需加密后存储
+* 用户密码等需加密后存储
 
 * 同一字段在不同表设计的字段类型要一样
 
 * 存储过程尽量不用
+
 * 触发器尽量不用
 * sql语句避免使用临时表
 * 禁止使用外键约束，在程序上面控制约束
