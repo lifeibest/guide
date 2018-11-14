@@ -63,7 +63,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 
 * 类型用户名有唯一索引要求的，必须添加唯一索引
 
-**3、其它说明**
+**3、其它规范**
 
 * 图片、文件等内容不允许直接存储在数据库，只存文件地址
 
