@@ -8,7 +8,9 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 
 * 统一字符集utf8mbt，因需存储emoj表情，使用utf8mb4
 * 名称小写、单数、下划线，名称和业务线或者产品线关联
-* 数据库配置sql\_mode： STRICT\_TRANS\_TABLES去掉
+* 数据库配置sql\_mode：删除~~STRICT\_TRANS\_TABLES~~去掉严格校验，如果程序中有相关全局配置也去；删除~~NO\_ZERO\_DATE ~~ ，日期类可以插入0日期；默认配置使用：NO\_AUTO\_CREATE\_USER,NO\_ENGINE\_SUBSTITUTION
+
+
 
 2、**表名称小写、单数、下划线，指定使用utf8mb4字符**
 
