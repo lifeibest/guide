@@ -1,6 +1,6 @@
 # Mysql 设计规范
 
-1、**数据库规范**
+**1、数据库规范**
 
 ```
 CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;
@@ -10,7 +10,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 * 名称小写、单数、下划线，名称和业务线或者产品线关联
 * 数据库配置sql\_mode默认配置使用NO\_AUTO\_CREATE\_USER,NO\_ENGINE\_SUBSTITUTION：删除~~STRICT\_TRANS\_TABLES~~，去掉严格校验，如果程序中有相关全局配置也删除；删除~~NO\_ZERO\_DATE~~，日期类可以插入0日期；
 
-2、**数据表规范**
+**2、数据表规范**
 
     CREATE TABLE `post_comment` (
       `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -45,11 +45,15 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 * 时间类为datetime
 
 * 资金和钱相关的为bigint\(20\)，精确到分
+
 * 使用tinyint来代替ENUM类型，将字符转化为数字
+
 * 枚举使用 tinyint或者int 代替，从数字1开始
 * 每个表自带3个字段，id、created\_at、updated\_at
 * 说明:其中 id 必为主键，类型为 unsigned bigint、单表时自增、步长为 1;created\_at、updated\_at为时间类datetime
-* **3、其它说明**
+* 类型用户名有唯一索引要求的，必须添加唯一索引
+
+**3、其它说明**
 
 * 图片、文件等内容不允许直接存储在数据库，只存文件地址
 
@@ -64,6 +68,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 * sql语句避免使用临时表
 
 * 禁止使用外键约束，在程序上面控制约束
+
 * 临时表名必须以tmp为前缀，并以日期为后缀
 
 **4、表数据一致性说明**
