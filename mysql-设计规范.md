@@ -10,7 +10,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 * 名称小写、单数、下划线，名称和业务线或者产品线关联
 * 数据库配置sql\_mode默认配置使用NO\_AUTO\_CREATE\_USER,NO\_ENGINE\_SUBSTITUTION：删除~~STRICT\_TRANS\_TABLES~~，去掉严格校验，如果程序中有相关全局配置也删除；删除~~NO\_ZERO\_DATE~~，日期类可以插入0日期；
 
-2、**表名称小写、单数、下划线，指定使用utf8mb4字符**
+2、**数据表规范**
 
     CREATE TABLE `post_comment` (
       `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
@@ -43,6 +43,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 * is\_ 是否类字段，1代表真，0代表假，增加默认值
 
 * 时间类为datetime
+
 * 资金和钱相关的为bigint\(20\)，精确到分
 * 使用tinyint来代替ENUM类型，将字符转化为数字
 * 枚举使用 tinyint或者int 代替，从数字1开始
@@ -61,6 +62,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 * 触发器尽量不用
 
 * sql语句避免使用临时表
+
 * 禁止使用外键约束，在程序上面控制约束
 * 临时表名必须以tmp为前缀，并以日期为后缀
 
