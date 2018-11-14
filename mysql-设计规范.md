@@ -1,12 +1,14 @@
 # Mysql 设计规范
 
-1、**数据库名字小写、单数、下划线，指定使用utf8mb4字符，名称和业务线或者产品线关联**
+1、**数据库规范**
 
 ```
 CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;
 ```
 
-* 因需存储emoj表情，使用UTF8mb4
+* 统一字符集utf8mbt，因需存储emoj表情，使用utf8mb4
+* 名称小写、单数、下划线，名称和业务线或者产品线关联
+* 数据库配置sql\_mode： STRICT\_TRANS\_TABLES去掉
 
 2、**表名称小写、单数、下划线，指定使用utf8mb4字符**
 
