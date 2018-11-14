@@ -67,7 +67,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 
 * 图片、文件等内容不允许直接存储在数据库，只存文件地址
 
-* 用户密码等需加密后存储
+* 用户密码等敏感信息需加密后存储
 
 * 同一字段在不同表设计的字段类型要一样
 
