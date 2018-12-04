@@ -6,7 +6,7 @@
 CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_unicode_ci;
 ```
 
-* 统一字符集utf8mbt，因需存储emoj表情，使用utf8mb4
+* 统一字符集utf8mb4，因需存储emoj表情，使用utf8mb4
 * 名称小写、单数、下划线，名称和业务线或者产品线关联
 * 数据库配置sql\_mode默认配置使用NO\_AUTO\_CREATE\_USER,NO\_ENGINE\_SUBSTITUTION：删除~~STRICT\_TRANS\_TABLES~~，去掉严格校验，如果程序中有相关全局配置也删除；删除~~NO\_ZERO\_DATE~~，日期类可以插入0日期；
 
@@ -49,7 +49,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 
 * is\_ 是否类字段，1代表真，0代表假，增加默认值
 
-* 时间类为datetime
+* 时间类为datetime，毫秒时间单位6位datetime\(6\)
 
 * 资金和钱相关的为bigint\(20\)，精确到分
 
