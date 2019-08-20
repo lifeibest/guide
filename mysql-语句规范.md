@@ -1,3 +1,5 @@
+# Mysql 语句规范
+
 1、**减少与数据库交互的次数**
 
 比如多次插入、更新的sql语句，不允许在程序里循环和数据库查询，而是先用程序拼接成一条sql，然后再数据库交互。
@@ -75,8 +77,6 @@ SELECT * from post WHERE id>1000 ORDER BY id desc limit 10;
 错误
 where 1=1 这样无意义或恒真的条件，，如果遇到update/delete或遭到sql注入就恐怖了
 ```
-
-
 
 
 
