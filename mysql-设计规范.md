@@ -24,6 +24,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
       `price` bigint(20) NOT NULL DEFAULT '0' COMMENT '阅读价格（精确到分）',
       `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '创建时间',
       `updated_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '更新时间',
+      `push_date` datetime DEFAULT NULL COMMENT '发布日期',
       PRIMARY KEY (`id`),
       KEY `post_id` (`post_id`),
       KEY `user_id` (`user_id`)
@@ -52,7 +53,7 @@ CREATE DATABASE dbname  DEFAULT CHARACTER SET utf8mb4 DEFAULT COLLATE utf8mb4_un
 
 * is\_ 是否类字段，1代表真，0代表假，增加默认值
 
-* 时间类为datetime，毫秒时间单位6位datetime\(6\)
+* 时间类为datetime，毫秒时间单位6位datetime\(6\)，如果可以为空，默认值NULL
 
 * 资金和钱相关的为bigint\(20\)，精确到分
 
